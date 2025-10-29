@@ -64,6 +64,10 @@ provider "aws" "configurations" {
   }
 }
 
+provider "vault" "configurations" {
+  address = var.vault_address
+}
+
 provider "cloudinit" "this" {}
 provider "time" "this" {}
 provider "tls" "this" {}
@@ -71,4 +75,3 @@ provider "local" "this" {}
 provider "random" "this" {}
 provider "null" "this" {}
 provider "vault" "this" {}
-
