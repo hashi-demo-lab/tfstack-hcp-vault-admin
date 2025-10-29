@@ -65,7 +65,9 @@ provider "aws" "configurations" {
 }
 
 provider "vault" "configurations" {
-  address = var.vault_address
+  config {
+    address = var.vault_address  
+  }
 }
 
 provider "cloudinit" "this" {}
