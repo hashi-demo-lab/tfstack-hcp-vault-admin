@@ -64,7 +64,7 @@ provider "aws" "configurations" {
   }
 }
 
-provider "vault" "configurations" {
+provider "vault" "this" {
   config {
     address = var.vault_address
   }
@@ -76,4 +76,3 @@ provider "tls" "this" {}
 provider "local" "this" {}
 provider "random" "this" {}
 provider "null" "this" {}
-provider "vault" "this" {}
