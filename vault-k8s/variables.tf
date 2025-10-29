@@ -1,3 +1,9 @@
+variable "kubernetes_auth_path" {
+  description = "The Kubernetes API server URL (e.g., https://kubernetes.default.svc)"
+  type        = string
+}
+
+
 variable "kubernetes_host" {
   description = "The Kubernetes API server URL (e.g., https://kubernetes.default.svc)"
   type        = string

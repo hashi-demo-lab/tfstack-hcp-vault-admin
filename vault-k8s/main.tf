@@ -1,7 +1,7 @@
 # Enable the Kubernetes auth method
 resource "vault_auth_backend" "kubernetes" {
   type = "kubernetes"
-  path = "kubernetes"
+  path = var.kubernetes_auth_path
 
   description = "Kubernetes auth method for EKS cluster authentication"
 }
