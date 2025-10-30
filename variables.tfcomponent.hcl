@@ -29,6 +29,12 @@ variable "kubernetes_host" {
   type        = string
 }
 
+variable "kubernetes_ca_cert" {
+  description = "PEM encoded CA certificate to verify the Kubernetes API server certificate"
+  type        = string
+  sensitive   = true
+}
+
 # variable "vault_connection_name" {
 #   description = "Name of the VaultConnection resource"
 #   type        = string
