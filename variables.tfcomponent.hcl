@@ -5,11 +5,11 @@ variable "vault_address" {
   default     = "https://vault-prod-cluster-public-vault-e9ea50ce.a99efec2.z1.hashicorp.cloud:8200"
 }
 
-# variable "vault_token" {
-#   description = "vault token"
-#   type        = string
-#   sensitive   = true
-# }
+variable "vault_token" {
+  description = "vault token"
+  type        = string
+  sensitive   = true
+}
 
 variable "kubernetes_auth_path" {
   description = "The path where the Kubernetes auth method is mounted"
