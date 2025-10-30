@@ -1,6 +1,5 @@
 store "varset" "vault" {
   id         = "varset-4nWn6NhNY5rtigLt"
-  name       = "vault"
   category   = "env"
 }
 
