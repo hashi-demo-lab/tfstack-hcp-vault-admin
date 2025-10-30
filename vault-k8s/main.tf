@@ -18,6 +18,14 @@ resource "vault_kubernetes_auth_backend_config" "kubernetes" {
   disable_local_ca_jwt = var.disable_local_ca_jwt
 }
 
+# create a kv2 secret engine
+resource "vault_mount" "kvv2" {
+  path        = "kvv2"
+  type        = "generic"
+  description = "This is a kv2 secret engine"
+}
+
+
 # # Create a Kubernetes auth role
 # resource "vault_kubernetes_auth_backend_role" "app" {
 #   backend                          = vault_auth_backend.kubernetes.path
