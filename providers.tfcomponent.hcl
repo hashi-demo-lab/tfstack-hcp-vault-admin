@@ -9,8 +9,9 @@ required_providers {
 
 provider "vault" "this" {
   config {
-    address = var.vault_address
+    address   = var.vault_address
     namespace = var.namespace
+    token     = var.vault_token
   }
 }
 
