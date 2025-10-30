@@ -9,6 +9,7 @@ variable "vault_token" {
   description = "vault token"
   type        = string
   sensitive   = true
+  ephemeral   = true
 }
 
 variable "kubernetes_auth_path" {

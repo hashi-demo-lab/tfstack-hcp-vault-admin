@@ -4,7 +4,7 @@
   "bound_claims_type": "glob",
   "bound_claims": {
     "sub":
-"organization:hashi-demos-apj:project:hackathon:stack:*:*"
+"organization:hashi-demos-apj:project:hackathon:*"
   },
   "user_claim": "terraform_full_workspace",
   "role_type": "jwt",
