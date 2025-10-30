@@ -40,8 +40,8 @@ EOT
 resource "vault_kubernetes_auth_backend_role" "app" {
   backend                          = vault_auth_backend.kubernetes.path
   role_name                        = "role1"
-  bound_service_account_names      = "demo-static-app"
-  bound_service_account_namespaces = "app"
+  bound_service_account_names      = ["demo-static-app"]
+  bound_service_account_namespaces = ["app"]
   token_ttl                        = "2m"
   token_policies                   = vault_policy.webapp.name
 
