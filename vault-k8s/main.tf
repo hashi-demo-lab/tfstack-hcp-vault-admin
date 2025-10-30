@@ -25,6 +25,22 @@ resource "vault_mount" "kvv2" {
   description = "This is a kv2 secret engine"
 }
 
+# Create webapp policy
+resource "vault_policy" "webapp" {
+  name = "webapp"
+
+  policy = <<EOT
+path "kvv2/data/webapp/config" {
+  capabilities = ["read", "list", "subscribe"]
+  subscribe_event_types = ["kv*"]
+}
+
+path "sys/events/subscribe/kv*" {
+  capabilities = ["read"]
+}
+EOT
+}
+
 
 # # Create a Kubernetes auth role
 # resource "vault_kubernetes_auth_backend_role" "app" {
