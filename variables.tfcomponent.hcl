@@ -19,7 +19,9 @@ variable "kubernetes_auth_path" {
 }
 
 variable "namespace" {
-  
+  description = "Kubernetes namespace for Vault authentication"
+  type        = string
+  default     = "default"
 }
 
 # variable "vault_connection_name" {
