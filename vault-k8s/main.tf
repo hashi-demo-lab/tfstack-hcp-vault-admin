@@ -10,12 +10,6 @@ resource "vault_kubernetes_auth_backend_config" "kubernetes" {
   backend            = vault_auth_backend.kubernetes.path
   kubernetes_host    = var.kubernetes_host
   kubernetes_ca_cert = var.kubernetes_ca_cert  
-
-  # Optional: Disable issuer validation if using EKS with OIDC
-  disable_iss_validation = var.disable_iss_validation
-
-  # Optional: For EKS IRSA
-  disable_local_ca_jwt = var.disable_local_ca_jwt
 }
 
 # create a kv2 secret engine
