@@ -8,16 +8,16 @@ variable "namespace" {
   type        = string
 }
 
-# variable "kubernetes_host" {
-#   description = "The Kubernetes API server URL (e.g., https://kubernetes.default.svc)"
-#   type        = string
-# }
+variable "kubernetes_host" {
+  description = "The Kubernetes API server URL (e.g., https://kubernetes.default.svc)"
+  type        = string
+}
 
-# variable "kubernetes_ca_cert" {
-#   description = "PEM encoded CA certificate to verify the Kubernetes API server certificate"
-#   type        = string
-#   sensitive   = true
-# }
+variable "kubernetes_ca_cert" {
+  description = "PEM encoded CA certificate to verify the Kubernetes API server certificate"
+  type        = string
+  sensitive   = true
+}
 
 # variable "token_reviewer_jwt" {
 #   description = "JWT token for Vault to use when verifying Kubernetes service account tokens"

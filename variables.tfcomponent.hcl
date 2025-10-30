@@ -24,6 +24,11 @@ variable "namespace" {
   default     = "default"
 }
 
+variable "kubernetes_host" {
+  description = "The Kubernetes API server URL (e.g., https://kubernetes.default.svc)"
+  type        = string
+}
+
 # variable "vault_connection_name" {
 #   description = "Name of the VaultConnection resource"
 #   type        = string

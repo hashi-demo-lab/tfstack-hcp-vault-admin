@@ -2,23 +2,21 @@
 resource "vault_auth_backend" "kubernetes" {
   type = "kubernetes"
   path = var.kubernetes_auth_path
-
   description = "Kubernetes auth method for EKS cluster authentication"
 }
 
 # Configure the Kubernetes auth method
-# resource "vault_kubernetes_auth_backend_config" "kubernetes" {
-#   backend            = vault_auth_backend.kubernetes.path
-#   kubernetes_host    = var.kubernetes_host
-#   kubernetes_ca_cert = var.kubernetes_ca_cert
-#   token_reviewer_jwt = var.token_reviewer_jwt
+resource "vault_kubernetes_auth_backend_config" "kubernetes" {
+  backend            = vault_auth_backend.kubernetes.path
+  kubernetes_host    = var.kubernetes_host
+  kubernetes_ca_cert = var.kubernetes_ca_cert  
 
-#   # Optional: Disable issuer validation if using EKS with OIDC
-#   disable_iss_validation = var.disable_iss_validation
+  # Optional: Disable issuer validation if using EKS with OIDC
+  disable_iss_validation = var.disable_iss_validation
 
-#   # Optional: For EKS IRSA
-#   disable_local_ca_jwt = var.disable_local_ca_jwt
-# }
+  # Optional: For EKS IRSA
+  disable_local_ca_jwt = var.disable_local_ca_jwt
+}
 
 # # Create a Kubernetes auth role
 # resource "vault_kubernetes_auth_backend_role" "app" {
