@@ -42,7 +42,7 @@ resource "vault_kubernetes_auth_backend_role" "app" {
   role_name                        = "role1"
   bound_service_account_names      = ["demo-static-app"]
   bound_service_account_namespaces = ["app"]
-  token_ttl                        = "2m"
+  token_ttl                        = 120
   token_policies                   = vault_policy.webapp.name
 
   # Optional: Audience for the JWT
