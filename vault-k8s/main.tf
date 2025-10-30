@@ -36,19 +36,18 @@ EOT
 }
 
 
-# # Create a Kubernetes auth role
-# resource "vault_kubernetes_auth_backend_role" "app" {
-#   backend                          = vault_auth_backend.kubernetes.path
-#   role_name                        = var.role_name
-#   bound_service_account_names      = var.bound_service_account_names
-#   bound_service_account_namespaces = var.bound_service_account_namespaces
-#   token_ttl                        = var.token_ttl
-#   token_max_ttl                    = var.token_max_ttl
-#   token_policies                   = var.token_policies
+# Create a Kubernetes auth role
+resource "vault_kubernetes_auth_backend_role" "app" {
+  backend                          = vault_auth_backend.kubernetes.path
+  role_name                        = "role1"
+  bound_service_account_names      = "demo-static-app"
+  bound_service_account_namespaces = "app"
+  token_ttl                        = "2m"
+  token_policies                   = vault_policy.webapp.name
 
-#   # Optional: Audience for the JWT
-#   audience = var.audience
-# }
+  # Optional: Audience for the JWT
+  audience = "vault"
+}
 
 # # Output the auth backend path
 # output "kubernetes_auth_path" {
