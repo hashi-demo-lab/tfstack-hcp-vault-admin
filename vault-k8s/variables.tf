@@ -3,6 +3,10 @@ variable "kubernetes_auth_path" {
   type        = string
 }
 
+variable "namespace" {
+  description = "Kubernetes namespace for Vault authentication"
+  type        = string
+}
 
 # variable "kubernetes_host" {
 #   description = "The Kubernetes API server URL (e.g., https://kubernetes.default.svc)"
