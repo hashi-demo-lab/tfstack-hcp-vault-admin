@@ -3,6 +3,7 @@ component "k8s_auth" {
 
   inputs = {
     kubernetes_auth_path = var.kubernetes_auth_path
+    namespace            = var.namespace
   }
 
   providers = {
