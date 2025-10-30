@@ -11,11 +11,11 @@ variable "vault_address" {
 #   sensitive   = true
 # }
 
-# variable "kubernetes_auth_path" {
-#   description = "The path where the Kubernetes auth method is mounted"
-#   type        = string
-#   default     = "kubernetes"
-# }
+variable "kubernetes_auth_path" {
+  description = "The path where the Kubernetes auth method is mounted"
+  type        = string
+  default     = "kubernetes"
+}
 
 # variable "vault_connection_name" {
 #   description = "Name of the VaultConnection resource"
